@@ -2,6 +2,8 @@
 
 Final Project for CS196 - CS@Illinois.
 
+### Uses Python v3.6.2
+
 ## Installation
 
 ### For Mac/Linux/Unix Users:
