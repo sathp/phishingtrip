@@ -13,19 +13,26 @@ def text_to_csv(input_path, output_path):
     # Parsing through .txt file
     text_file = open(input_path)
     text = text_file.readlines()
-    output = []
-    body = []
+    output = [input_path]
+    body = ""
     for i in range(len(text)):
         text[i] = text[i].strip("\n")
         if text[i].find("Subject:") != -1:
-            temp = text[i]
-            output.append(temp[8:])
+            output.append(text[i])
             for x in range(i + 1, len(text)):
-                temp = text[i].strip("\n")
-                body.append(text[x])
+                temp = " " + text[x].strip("\n")
+                body += temp
             output.append(body)
             break
-    print(output)
+
+    # Print Output
+    # print(output)
 
     # Writing Data to .csv file
-    # csv = open(output_path)
+    csv_file = open(output_path, 'a')
+    with csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(output)
+
+
+
