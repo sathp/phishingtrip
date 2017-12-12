@@ -12,18 +12,21 @@ def text_to_csv(input_path, output_path):
 
     # Parsing through .txt file
     text_file = open(input_path)
-    text = text_file.readlines()
+    text = text_file.encode('utf-8').readlines()
     output = [input_path]
     body = ""
     for i in range(len(text)):
-        text[i] = text[i].strip("\n")
-        if text[i].find("Subject:") != -1:
-            output.append(text[i])
-            for x in range(i + 1, len(text)):
-                temp = " " + text[x].strip("\n")
-                body += temp
-            output.append(body)
-            break
+        try:
+            text[i] = text[i].encode('utf-8').strip("\n")
+            if text[i].find("Subject:") != -1:
+                output.append(text[i])
+                for x in range(i + 1, len(text)):
+                    temp = " " + text[x].strip("\n")
+                    body += temp
+                output.append(body)
+                break
+        except:
+            pass
 
     # Print Output
     # print(output)
