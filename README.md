@@ -1,6 +1,7 @@
 # phishingtrip
 
 Final Project for CS196 - CS@Illinois.
+
 Team Members: Krist Pregracke, Jingjin Wang, Sathwik Pochampally and Soumya Kuruvila.
 
 This program uses spam and non-spam e-mail data to
@@ -74,6 +75,7 @@ python3 training_data/file.py
 python3 training_data/parser.py
 ```
 Filepaths to e-mails will be stored in file.csv.
+
 Selected e-mail data is stored in the form of a csv at output.csv.
 
 
