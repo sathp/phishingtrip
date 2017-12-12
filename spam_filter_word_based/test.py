@@ -61,7 +61,12 @@ def evaluate():
         # correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
         # accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
         # print(accuracy.eval({x: tst_data[100:200], y: tst_label[100:200]}))
-        print(prediction.eval(feed_dict={x : createFeatures()}))
+        output = prediction.eval(feed_dict={x : createFeatures()})[0]
+        print("raw output: ", output)
+        if output[1] > output[0]:
+            print("The input email is a spam.")
+        else:
+            print("The input email is not a spam.")
 
 def createFeatures():
     dictionary = []
