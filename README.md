@@ -74,6 +74,13 @@ https://www.kaggle.com/kaggle/hillary-clinton-emails?login=true
 python3 training_data/file.py
 python3 training_data/parser.py
 ```
+### Checking whether an email is a spam:
+First, copy and paste the email to spamfilter_wordbased/input.txt
+Then, run
+```bash
+python3 spamfilter_wordbased/test.py
+```
+
 Filepaths to e-mails will be stored in file.csv.
 
 Selected e-mail data is stored in the form of a csv at output.csv.
