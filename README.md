@@ -16,6 +16,7 @@ Mac:
 ```bash
 brew install python3
 pip3 install virtualenv
+pip3 install tensorflow
 brew update
 brew install p7zip
 ```
@@ -26,6 +27,7 @@ sudo apt-get install python3
 sudo apt-get install python-pip
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
+sudo pip install tensorflow
 sudo apt-get install p7zip
 ```
 
@@ -79,7 +81,7 @@ Filepaths to e-mails will be stored in file.csv.
 
 Selected e-mail data is stored in the form of a csv at output.csv.
 
-### Checking whether an email is a spam:
+## Checking whether an email is a spam:
 
 First, copy and paste the email to spamfilter_wordbased/input.txt
 
