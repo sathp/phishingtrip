@@ -11,7 +11,7 @@ num_chars = None
 letter_dic = None
 reverse_letter_dic = None
 max_time_steps = 100
-input_string = "cucumber"
+input_string = "spam emails are fun "
 len_str = len(input_string)
 num_layers = 2
 
@@ -60,7 +60,6 @@ with tf.variable_scope("train"):
 	print("Train_labels dim is ", train_labels.shape)
 	
 	train_labels = tf.transpose(train_labels, [0,1,2])
-	
 	
 	#compare calculated prob with next time_step
 	
@@ -150,8 +149,6 @@ with sess.as_default():
 	#set up a non tensor rep of the state
 	numpy_state = (np.zeros([batch_size, num_lstm_units], np.float64), np.zeros([batch_size, num_lstm_units], np.float64))
 	
-	writer = tf.summary.FileWriter("C:/Users/Krist/Desktop/spam", sess.graph)
-	
 	#format a string to be completed
 	my_string = input_string
 	my_string = np.asarray([[get_arr_with_n_as_one(letter_dic[char], num_chars)] for char in my_string])
@@ -176,7 +173,7 @@ with sess.as_default():
 				chars_o = ""'''	
 		
 	print("================================================")
-	saver.restore(sess, "C:/Users/Krist/Desktop/spam/varney")
+	saver.restore(sess, "./varney")
 	p, s = sess.run([probabilities_r, final_state_r], feed_dict={input_data_p_r: my_string})
 	
 	chars_o = ""
